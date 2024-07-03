@@ -1,43 +1,402 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <title>React App</title>
+  <style>
+    /* Global Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    form label ul li {
+      list-style: none !important;
+    }
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #f4f0f0 !important;
+      background: #a49595;
+      background-color: rgb(27, 28, 27) !important;
+      font-size: 20px !important;
+    }
+
+    .flex-column-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      background: #695acd;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    header nav ul li {
+      margin-right: 20px;
+    }
+
+    header nav a {
+      color: #fff;
+    }
+
+    /* Homepage Styles */
+    #homepage {
+      padding: 20px;
+    }
+
+    #homepage h1 {
+      margin-top: 0;
+    }
+
+    #homepage ul {
+      margin-top: 20px;
+    }
+
+    #homepage li {
+      margin-bottom: 10px;
+    }
+
+    /* About Us Styles */
+    #about-us {
+      padding: 20px;
+    }
+
+    #about-us h2 {
+      margin-top: 0;
+    }
+
+    #about-us ul {
+      margin-top: 20px;
+    }
+
+    #about-us li {
+      margin-bottom: 10px;
+    }
+
+    /* Services Styles */
+    #services {
+      padding: 20px;
+      width: 100%;
+      background-image: url('services-background-image.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    #services h2 {
+      margin-top: 0;
+    }
+
+    #services ul {
+      margin-top: 20px;
+    }
+
+    #services li {
+      margin-bottom: 10px;
+    }
+
+    /* Contact Us Styles */
+    #contact-us {
+      background-image: url('contact.jpeg');
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      padding: 20px;
+    }
+
+    #contact-us h2 {
+      margin-top: 0;
+    }
+
+    #contact-us form {
+      margin-top: 20px;
+    }
+
+    #contact-us ul {
+      list-style: none;
+    }
+
+    #contact-us label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    #contact-us input,
+    textarea {
+      padding: 10px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #contact-us input[type="submit"] {
+      background-color: #337ab7;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+/* footer styles */
+    footer {
+      background: #695acd;
+      padding: 10px;
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .company-info {
+      display: flex;
+      align-items: center;
+    }
+
+    .company-info h2 {
+      margin-right: 10px;
+    }
+
+    .social-media-links {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .social-media-links a {
+      margin-right: 10px;
+    }
+    .links{
+      color: white;
+    }
+   
+
+    /* Blog/News Styles */
+    #blog-news {
+      padding: 20px;
+    }
+
+    #blog-news h2 {
+      margin-top: 0;
+    }
+
+    #blog-news ul {
+      margin-top: 20px;
+    }
+
+    #blog-news li {
+      margin-bottom: 10px;
+    }
+
+    /* Careers Styles */
+    #careers {
+      padding: 20px;
+    }
+
+    #careers h2 {
+      margin-top: 0;
+    }
+
+    #careers ul {
+      margin-top: 20px;
+    }
+
+    #careers li {
+      margin-bottom: 10px;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 1200px) {
+
+      /* Header Styles */
+      header {
+        padding: 15px;
+      }
+
+      header nav ul li {
+        margin-right: 15px;
+      }
+    }
+
+    @media (max-width: 768px) {
+
+      /* Header Styles */
+      header {
+        padding: 10px;
+      }
+
+      header nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      header nav ul li {
+        margin-right: 0;
+      }
+
+      /* Homepage Styles */
+      #homepage {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #homepage h1 {
+        font-size: 24px;
+      }
+
+      /* About Us Styles */
+      #about-us {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #about-us h2 {
+        font-size: 20px;
+      }
+
+      /* Services Styles */
+      #services {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #services h2 {
+        font-size: 20px;
+      }
+
+      /* Contact Us Styles */
+      #contact-us {
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        /* Adjust the width as needed */
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      #contact-us h2 {
+        font-size: 20px;
+      }
+
+      /* Blog/News Styles */
+      #blog-news {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #blog-news h2 {
+        font-size: 20px;
+      }
+
+      /* Careers Styles */
+      #careers {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #careers h2 {
+        font-size: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      /* Header Styles */
+      header {
+        padding: 5px;
+      }
+
+      header nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      header nav ul li {
+        margin-right: 0;
+      }
+
+      /* Homepage Styles */
+      #homepage {
+        padding: 10px;
+      }
+
+      #homepage h1 {
+        font-size: 18px;
+      }
+
+      /* About Us Styles */
+      #about-us {
+        padding: 10px;
+      }
+
+      #about-us h2 {
+        font-size: 16px;
+      }
+
+      /* Services Styles */
+      #services {
+        padding: 10px;
+      }
+
+      #services h2 {
+        font-size: 16px;
+      }
+
+      /* Contact Us Styles */
+      #contact-us {
+        padding: 10px;
+      }
+
+      #contact-us h2 {
+        font-size: 16px;
+      }
+
+      /* Blog/News Styles */
+      #blog-news {
+        padding: 10px;
+      }
+
+      #blog-news h2 {
+        font-size: 16px;
+      }
+
+      /* Careers Styles */
+      #careers {
+        padding: 10px;
+      }
+
+      #careers h2 {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script src="/index.js"></script>
+  
+</body>
+
 </html>
