@@ -1,8 +1,12 @@
-fetch('http://localhost:3001/register', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ name, email, phone, message }),
-})
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error(error));
+const footer = document.querySelector('footer');
+
+window.addEventListener('scroll', () => {
+  const scrollPosition = window.scrollY + window.innerHeight;
+  const height = document.body.offsetHeight;
+
+  if (scrollPosition >= height) {
+    footer.classList.add('active');
+  } else {
+    footer.classList.remove('active');
+  }
+});
