@@ -1,4 +1,5 @@
 {
+  "homepage": "http://Thrupthi-shekar.github.io/Tieproject",
   "name": "my-app",
   "version": "0.1.0",
   "type": "module",
@@ -32,6 +33,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy":"npm run build",
+    "deploy":"gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test"
   },
@@ -61,6 +64,7 @@
   "devDependencies": {
     "@babel/core": "^7.24.7",
     "@babel/plugin-syntax-jsx": "^7.24.7",
-    "@babel/plugin-transform-react-jsx": "^7.24.7"
+    "@babel/plugin-transform-react-jsx": "^7.24.7",
+    "gh-pages": "^6.1.1"
   }
 }
