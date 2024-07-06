@@ -10,7 +10,7 @@ export default function ContactUs() {
   const collectData = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3000/api", {
+      const response = await axios.post("http://localhost:4000/api", {
         name,
         email,
         phone,

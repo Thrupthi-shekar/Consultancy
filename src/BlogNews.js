@@ -2,6 +2,7 @@ import React from 'react';
 
 const BlogNews = () => {
   return (
+    
     <section id="blog-news" className='content'>
       <h1>Blog</h1>
       <ul>

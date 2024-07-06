@@ -7,4 +7,5 @@ const usersSchema=new mongoose.Schema({
   message:String,
 });
 
+// exports mongoose model as module using above schema
 module.exports=mongoose.model("collections",usersSchema)

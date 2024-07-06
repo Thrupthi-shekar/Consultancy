@@ -10,15 +10,18 @@ import Careers from './Careers.js';
 import './styles.css'
 import "bootstrap/dist/css/bootstrap.min.css";
 
+
+// useState Hook stores current section 
 const Home = () => {
   const [currentSection, setCurrentSection] = useState('#homepage');
 
+  // updates the current section when nav link is clicked
   const handleNavClick = (event) => {
     event.preventDefault();
     const targetId = event.target.getAttribute('href');
     setCurrentSection(targetId);
   };
-
+  // used to set a initial section to homepage
   useEffect(() => {
     setCurrentSection('#homepage');
   }, []);
